@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {# Load the tag library #}
+  {% load bootstrap4 %}
+
+  {# Load CSS and JavaScript #}
+  {% bootstrap_css %}
+  {% bootstrap_javascript jquery='full' %}
+
+  {# Display django.contrib.messages as Bootstrap alerts #}
+  {% bootstrap_messages %}
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">WATT.Dev Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExampleDefault"
+      aria-controls="navbarExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="#navbarExampleDefault">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      </div>
+    </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+
+  <main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Hello, this is my Django Blog!</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      {% for post in posts %}
+
+      <div class="row pb-3">
+        <div class="col-sm-12">
+            <div class="card">
+              <div class="card-header">
+                My Story
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{post.body}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+
+        <hr>
+
+      </div> <!-- /container -->
+
+  </main>
+
+  <footer class="container">
+    <p>&copy; Django blog 2022</p>
+  </footer>
+
+
+
+</body>
+
+</html>
