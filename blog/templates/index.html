@@ -63,6 +63,9 @@
           <div class="card">
             <div class="card-header">
               My Story
+              {% if post.photo %}
+                <img class="card-img-top" src="{{ post.photo.url }}" alt="Blog photo">
+              {% endif %}
             </div>
             <div class="card-body">
               <h5 class="card-title">{{post.title}}</h5>
