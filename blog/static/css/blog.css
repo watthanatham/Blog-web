@@ -1,8 +1,21 @@
+.body{
+  padding-top: 3.5rem;
+}
+h1, h2 {
+  font-family: 'Prompt', sans-serif;
+  font-weight: 800;
+}
+.jumbotron {
+  background: linear-gradient(
+    rgba(0,0,250, 0.25),
+    rgba(125, 250, 250, 0.45)
+  ), url('../img/ana-as-9__urMnLC7o-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white !important;
+}
 .message {
   font-weight: 600;
   color: red;
-}
-h1, h2,h3, h4, h5, h6 {
-  font-family: 'Prompt', sans-serif;
-  font-weight: 800;
 }
