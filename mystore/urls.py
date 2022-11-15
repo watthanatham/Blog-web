@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('mystore/urls.py', include('django_summernote.urls')),
     path('blog/', include('blog.urls')) # localhost/blog
 ]
 
