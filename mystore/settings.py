@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
+
 from unittest.mock import DEFAULT
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +28,7 @@ SECRET_KEY = '44%bx#h&&+7v*xt0wge0dx3%)-3_uv1=_cuig(g-_49n*wzrpb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com/']
 
 
 # Application definition
@@ -122,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -136,3 +139,5 @@ SUMMERNOTE_CONFIG = {
         'fontNamesIgnoreCheck': ['Prompt','Sarabun', 'sans-serif']
     }
 }
+
+django_heroku.settings(locals())
