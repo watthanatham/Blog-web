@@ -7,19 +7,21 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3">Hello, this is my Django Blog!</h1>
-      <p class="message">สวัสดีครับ</p>
+      <h1 class="display-3 text-center">WATT BLOG</h1>
+      <p class="text-center">Welcome to my web blog</p>
     </div>
   </div>
 
   <div class="container">
-    {% for post in page_obj.object_list %}
+    <!-- <div class="row"> -->
+      {% for post in page_obj.object_list %}
 
-    <div class="row pb-3">
+      <div class="row pb-3">
       <div class="col-sm-12">
         <div class="card">
           <div class="card-header">
-            My Story
+            Last update:
+            {{post.updated_at}}
             {% if post.photo %}
             <img class="card-img-top" src="{{ post.photo.url }}" alt="Blog photo">
             {% endif %}
@@ -32,8 +34,21 @@
         </div>
       </div>
     </div>
-    {% endfor %}
 
+      <!-- <div class="col-md-12">
+        <div class="card" style="width: 18rem;">
+          {% if post.photo %}
+          <img class="card-img-top" src="{{ post.photo.url }}" alt="Blog photo">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{ post.body|safe|truncatechars_html:300 }}</p>
+            <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">View more</a>
+          </div>
+        </div>
+      </div> -->
+      {% endfor %}
+    <!-- </div> -->
 
 
     <hr>
@@ -47,11 +62,12 @@
       {% endif %}
 
       {% for i in page_obj.paginator.page_range %}
-        {% if page_obj.number == i %}
-          <li class="page-item active" aria-current="page"><a class="page-link" href="?page={{i}}">{{i}}</a><span class="sr-only">(current)</span></li>
-        {% else %}
-          <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
-        {%  endif %}
+      {% if page_obj.number == i %}
+      <li class="page-item active" aria-current="page"><a class="page-link" href="?page={{i}}">{{i}}</a><span
+          class="sr-only">(current)</span></li>
+      {% else %}
+      <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+      {% endif %}
       {% endfor%}
 
       {% if page_obj.has_next %}
