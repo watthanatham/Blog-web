@@ -2,44 +2,71 @@
 
 {% block content %}
 
-  <main role="main">
+<main role="main">
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class="display-3">Hello, this is my Django Blog!</h1>
-        <p class="message">สวัสดีครับ</p>
-      </div>
-    </div>
-
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
     <div class="container">
-      {% for post in posts %}
+      <h1 class="display-3">Hello, this is my Django Blog!</h1>
+      <p class="message">สวัสดีครับ</p>
+    </div>
+  </div>
 
-      <div class="row pb-3">
-        <div class="col-sm-12">
-          <div class="card">
-            <div class="card-header">
-              My Story
-              {% if post.photo %}
-                <img class="card-img-top" src="{{ post.photo.url }}" alt="Blog photo">
-              {% endif %}
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">{{post.title}}</h5>
-              <p class="card-text">{{ post.body|safe|truncatechars_html:300 }} ...</p>
-              <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">View more</a>
-            </div>
+  <div class="container">
+    {% for post in page_obj.object_list %}
+
+    <div class="row pb-3">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            My Story
+            {% if post.photo %}
+            <img class="card-img-top" src="{{ post.photo.url }}" alt="Blog photo">
+            {% endif %}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{ post.body|safe|truncatechars_html:300 }} </p>
+            <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">View more</a>
           </div>
         </div>
       </div>
-      {% endfor %}
+    </div>
+    {% endfor %}
 
 
 
-      <hr>
+    <hr>
 
-    </div> <!-- /container -->
+    <ul class="pagination justify-content-center">
 
-  </main>
+      {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+      </li>
+      {% endif %}
+
+      {% for i in page_obj.paginator.page_range %}
+        {% if page_obj.number == i %}
+          <li class="page-item active" aria-current="page"><a class="page-link" href="?page={{i}}">{{i}}</a><span class="sr-only">(current)</span></li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+        {%  endif %}
+      {% endfor%}
+
+      {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      </li>
+      {% endif %}
+
+    </ul>
+
+  </div> <!-- /container -->
+
+</main>
 
 {% endblock %}
