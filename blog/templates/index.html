@@ -18,7 +18,7 @@
       {% for post in page_obj.object_list %}
 
 
-      <div class="col-6">
+      <div class="col">
         <div class="card">
           <div class="card-header">
             Last update:
@@ -27,7 +27,7 @@
             {% if post.photo %}
             <div class="row" style="width: 100%; justify-content: center">
               <img class="card-img-top" src="{{ post.photo.url }}" alt="Blog photo"
-                style="width: 200px !important;height: auto;">
+                style="width: 290px !important;height: auto; padding-top: 10px; padding-right: 10px; margin-left: 10px;">
             </div>
             {% endif %}
           
@@ -78,10 +78,10 @@
 
     {% if page_obj.has_next %}
     <li class="page-item">
-      <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+      <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next page</a>
     </li>
     <li class="page-item">
-      <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last page</a>
     </li>
     {% endif %}
 
