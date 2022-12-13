@@ -18,19 +18,19 @@
       {% for post in page_obj.object_list %}
 
 
-      <div class="col">
+      <div class="col-sm-12">
         <div class="card">
           <div class="card-header">
             Last update:
             {{post.updated_at}}
           </div>
-            {% if post.photo %}
-            <div class="row" style="width: 100%; justify-content: center">
-              <img class="card-img-top" src="{{ post.photo.url }}" alt="Blog photo"
-                style="width: 290px !important;height: auto; padding-top: 10px; padding-right: 10px; margin-left: 10px;">
-            </div>
-            {% endif %}
-          
+          {% if post.photo %}
+          <div class="row" style="width: 100%; justify-content: center">
+            <img class="card-img-top" src="{{ post.photo.url }}" alt="Blog photo"
+              style="width: 290px !important;height: auto; padding-top: 10px; padding-right: 10px; margin-left: 10px;">
+          </div>
+          {% endif %}
+
           <div class="card-body">
             <h5 class="card-title">{{post.title}}</h5>
             <p class="card-text">{{ post.body|safe|truncatechars_html:300 }} </p>
