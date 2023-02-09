@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <img class="profile"
+        src="https://media.licdn.com/dms/image/D5603AQEuCJCE2ufrlQ/profile-displayphoto-shrink_800_800/0/1673449829031?e=1681344000&v=beta&t=OxqpdKVmvmwHF_BW6X_clUhJcWmAm6ATn-cL4DCnHg8"
+        alt="">
+    <h1 class="text-center pt-3">Watthanatham Kruram</h1>
+    <h5 class="text-center">Programmer / Full-stack Developer</h5>
+    <p class="bio text-center">
+        Hi, My name is Watthanatham Kruram. You can called me "Watt". I'm 24 years old.
+    </p>
+    <h2 class="text-center pt-4 pb-2">Education</h2>
+    <h2 class="text-center pt-4 pb-2">Skills</h2>
+    <div class="skills">
+        <ul>
+            <div class="text-center">
+                <img class="logo d-inline" src="https://cdn.worldvectorlogo.com/logos/html-1.svg" alt="">
+                <img class="logo d-inline" src="https://cdn4.iconfinder.com/data/icons/iconsimple-programming/512/css-512.png" alt="">
+                <img class="logo d-inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" alt="">
+                <img class="logo d-inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png" alt="">
+                <img class="logo d-inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png" alt="">
+            </div>
+        </ul>
+        <ul>
+            <div class="text-center">
+                <img class="logo d-inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" alt="">
+                <img class="ulogo d-inline" src="https://ubiqum.com/assets/uploads/2021/12/learn-java-with-ubiqum-logo.png" alt="">
+                <img class="utlogo d-inline" src="https://thumbs.dreamstime.com/b/sql-database-icon-logo-design-ui-ux-app-orange-inscription-shadow-96841969.jpg" alt="">
+                <img class="ulogo d-inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png" alt="">
+            </div>
+        </ul>
+    </div>
+    <h2 class="text-center pt-4 pb-2">Portfolio</h2>
+    <div class="container">
+        <div class="container text-center">
+            <div class="card d-inline-block col-12" style="width: 18rem;">
+                <img src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Student Tracking System (Vue.js)</h5>
+                    <p class="card-text">Web application for managing student information for Artifact Intelligent
+                        major.</p>
+                    <a href="https://github.com/watthanatham/student_tracking_system-front-end-" target="_blank"
+                        class="btn btn-primary">See more</a>
+                </div>
+            </div>
+            <div class="card d-inline-block col-12" style="width: 18rem;">
+                <img src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Student Tracking System (Node.js)</h5>
+                    <p class="card-text">Manage information about student and course in Artifacr Intelligent major.
+
+                    </p>
+                    <a href="https://github.com/watthanatham/student_tracking_system-back-end-" target="_blank"
+                        class="btn btn-primary">See more</a>
+                </div>
+            </div>
+            <div class="card d-inline-block col-12" style="width: 18rem;">
+                <img src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Development Note App (Kotlin)</h5>
+                    <p class="card-text">Developed Note app on AndroidOs in a Mobile Development subject.</p>
+                    <a href="https://github.com/watthanatham/Note-app" class="btn btn-primary" target="_blank">See
+                        more</a>
+                </div>
+            </div>
+            <div class="card d-inline-block col-12" style="width: 18rem;">
+                <img src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Point of Sale System (Java)</h5>
+                    <p class="card-text">Point of Sale system is a project term in a Software Development subject.</p>
+                    <a href="https://github.com/watthanatham/POS-System-" class="btn btn-primary" target="_blank">See
+                        more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endblock %}

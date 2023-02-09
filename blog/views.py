@@ -22,6 +22,9 @@ def post_detail(request, id):
   post = Post.objects.get(id=id, status=True)
   return render(request, 'post_detail.html', {'post': post})
 
+def about(request):
+  return render(request, 'about.html')
+
 def post_search(request):
   if 'search_keyword' in request.GET:
     search_keyword = request.GET['search_keyword']
